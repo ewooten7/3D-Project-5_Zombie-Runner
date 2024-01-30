@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType ammoType;           // Type of ammo used by this weapon
     [SerializeField] float timeBetweenShots = 0.5f; // Cooldown time between shots
     [SerializeField] TextMeshProUGUI ammoText;    // UI text for displaying ammo count
+    [SerializeField] private AudioSource shootingAudioSource; // Reference to AudioSource
 
     bool canShoot = true; // Flag to control whether the weapon can shoot
 
@@ -29,6 +30,7 @@ public class Weapon : MonoBehaviour
         DisplayAmmo(); // Update and display the remaining ammo count
         if (Input.GetMouseButtonDown(0) && canShoot == true)
         {
+            PlayShootingSound(); // Play the shooting sound effect
             StartCoroutine(Shoot()); // Start shooting when left mouse button is pressed
         }
     }
@@ -45,6 +47,7 @@ public class Weapon : MonoBehaviour
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             PlayMuzzleFlash(); // Play the muzzle flash effect
+            PlayShootingSound(); // Play the shooting sound effect
             ProcessRaycast();  // Handle shooting and hit detection
             ammoSlot.ReduceCurrentAmmo(ammoType); // Decrease ammo count
         }
@@ -70,6 +73,14 @@ public class Weapon : MonoBehaviour
         else
         {
             return; // No hit detected, return without doing anything
+        }
+    }
+
+    private void PlayShootingSound()
+    {
+        if (shootingAudioSource != null)
+        {
+            shootingAudioSource.Play();
         }
     }
 
