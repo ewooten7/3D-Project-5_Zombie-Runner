@@ -6,17 +6,19 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] Camera FPCamera;
-    [SerializeField] float range = 100f;
-    [SerializeField] float damage = 30f;
-    [SerializeField] ParticleSystem muzzleFlash;
-    [SerializeField] GameObject hitEffect;
-    [SerializeField] Ammo ammoSlot;
-    [SerializeField] AmmoType ammoType;
-    [SerializeField] float timeBetweenShots = 0.5f;
-    [SerializeField] TextMeshProUGUI ammoText;
+    // References to various components and variables
+    [SerializeField] Camera FPCamera;              // Reference to the first-person camera
+    [SerializeField] float range = 100f;          // Range of the weapon
+    [SerializeField] float damage = 30f;          // Damage dealt by the weapon
+    [SerializeField] ParticleSystem muzzleFlash;  // Muzzle flash effect
+    [SerializeField] GameObject hitEffect;        // Impact effect when a shot hits
+    [SerializeField] Ammo ammoSlot;               // Reference to the ammo inventory
+    [SerializeField] AmmoType ammoType;           // Type of ammo used by this weapon
+    [SerializeField] float timeBetweenShots = 0.5f; // Cooldown time between shots
+    [SerializeField] TextMeshProUGUI ammoText;    // UI text for displaying ammo count
+    [SerializeField] private AudioSource shootingAudioSource; // Reference to AudioSource
 
-    bool canShoot = true;
+    bool canShoot = true; // Flag to control whether the weapon can shoot
 
     private void OnEnable()
     {
@@ -25,35 +27,37 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        DisplayAmmo();
+        DisplayAmmo(); // Update and display the remaining ammo count
         if (Input.GetMouseButtonDown(0) && canShoot == true)
         {
-            StartCoroutine(Shoot());
+            PlayShootingSound(); // Play the shooting sound effect
+            StartCoroutine(Shoot()); // Start shooting when left mouse button is pressed
         }
     }
 
     private void DisplayAmmo()
     {
         int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
-        ammoText.text = currentAmmo.ToString();
+        ammoText.text = currentAmmo.ToString(); // Display the current ammo count in the UI
     }
 
     IEnumerator Shoot()
     {
-        canShoot = false;
+        canShoot = false; // Disable shooting temporarily
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
-            PlayMuzzleFlash();
-            ProcessRaycast();
-            ammoSlot.ReduceCurrentAmmo(ammoType);
+            PlayMuzzleFlash(); // Play the muzzle flash effect
+            PlayShootingSound(); // Play the shooting sound effect
+            ProcessRaycast();  // Handle shooting and hit detection
+            ammoSlot.ReduceCurrentAmmo(ammoType); // Decrease ammo count
         }
         yield return new WaitForSeconds(timeBetweenShots);
-        canShoot = true;
+        canShoot = true; // Enable shooting after cooldown
     }
 
     private void PlayMuzzleFlash()
     {
-        muzzleFlash.Play();
+        muzzleFlash.Play(); // Play the muzzle flash particle effect
     }
 
     private void ProcessRaycast()
@@ -61,19 +65,28 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
-            CreateHitImpact(hit);
+            CreateHitImpact(hit); // Create impact effect at the hit point
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-            if (target == null) return;
-            target.TakeDamage(damage);
+            if (target == null) return; // Check if the hit object has an EnemyHealth component
+            target.TakeDamage(damage); // Deal damage to the enemy
         }
         else
         {
-            return;
+            return; // No hit detected, return without doing anything
+        }
+    }
+
+    private void PlayShootingSound()
+    {
+        if (shootingAudioSource != null)
+        {
+            shootingAudioSource.Play();
         }
     }
 
     private void CreateHitImpact(RaycastHit hit)
     {
+        // Instantiate and destroy the impact effect at the hit point
         GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impact, .1f);
     }
