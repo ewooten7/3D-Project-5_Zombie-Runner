@@ -723,11 +723,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 28e5c354-a62e-4f86-b37e-94eedcc97d04
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: 3D Project 5_Zombie Runner
+  organizationId: mel0dys
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
