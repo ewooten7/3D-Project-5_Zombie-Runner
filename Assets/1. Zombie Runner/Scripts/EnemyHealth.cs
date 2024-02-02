@@ -27,6 +27,14 @@ public class EnemyHealth : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
+
+        // Play the death sound effect
+        if (deathSound != null)
+        {
+            deathSound.Play();
+        }
+
         GetComponent<Animator>().SetTrigger("die");
     }
+
 }
