@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
+    [SerializeField] AudioSource deathSound;
 
     bool isDead = false;
 

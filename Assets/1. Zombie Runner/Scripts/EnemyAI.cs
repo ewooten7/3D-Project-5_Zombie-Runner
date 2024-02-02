@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float turnSpeed = 5f;
     [SerializeField] AudioSource runningSound; 
     [SerializeField] AudioSource zombieSound;  
-    [SerializeField] AudioSource deathSound;
+    
 
 
     NavMeshAgent navMeshAgent;
