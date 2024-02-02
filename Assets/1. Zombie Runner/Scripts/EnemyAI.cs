@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5f;
+    [SerializeField] AudioSource runningSound; // Reference to the running sound AudioSource
 
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;
@@ -27,6 +28,12 @@ public class EnemyAI : MonoBehaviour
         {
             enabled = false;
             navMeshAgent.enabled = false;
+            
+            // Stop the running sound when the enemy dies
+            if (runningSound != null)
+            {
+                runningSound.Stop();
+            }
         }
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
@@ -43,8 +50,6 @@ public class EnemyAI : MonoBehaviour
     {
         isProvoked = true;
     }
-
-    public AudioSource runningSound;
 
     private void EngageTarget()
     {
@@ -66,12 +71,10 @@ public class EnemyAI : MonoBehaviour
         GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
 
-        if (runningSound != null)
+        // Play the running sound when the enemy starts chasing
+        if (runningSound != null && !runningSound.isPlaying)
         {
-            if (!runningSound.isPlaying)
-            {
-                runningSound.Play();
-            }
+            runningSound.Play();
         }
     }
 
