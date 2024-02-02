@@ -44,6 +44,8 @@ public class EnemyAI : MonoBehaviour
         isProvoked = true;
     }
 
+    public AudioSource runningSound;
+
     private void EngageTarget()
     {
         FaceTarget();
@@ -63,6 +65,14 @@ public class EnemyAI : MonoBehaviour
         GetComponent<Animator>().SetBool("attack", false);
         GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
+
+        if (runningSound != null)
+        {
+            if (!runningSound.isPlaying)
+            {
+                runningSound.Play();
+            }
+        }
     }
 
     private void AttackTarget()
