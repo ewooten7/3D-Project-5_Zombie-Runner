@@ -7003,7 +7003,7 @@ PrefabInstance:
       objectReference: {fileID: 1401808699}
     - target: {fileID: 5693025915066995186, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3946
+      value: 3949
       objectReference: {fileID: 0}
     - target: {fileID: 5693025915066995198, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_Mesh
@@ -7027,8 +7027,12 @@ PrefabInstance:
       objectReference: {fileID: 68620715}
     - target: {fileID: 7483119678846765660, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3940
+      value: 3943
       objectReference: {fileID: 0}
+    - target: {fileID: 8086973529640831829, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 8092529287866361081, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_Name
       value: Shells Pickups (2)
@@ -7051,7 +7055,7 @@ PrefabInstance:
       objectReference: {fileID: 147969008}
     - target: {fileID: 9120431451845214810, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3940
+      value: 3943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
@@ -7095,6 +7099,134 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &965105912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965105913}
+  - component: {fileID: 965105914}
+  m_Layer: 0
+  m_Name: Pickup Ammo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965105913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965105912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1634706404}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &965105914
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965105912}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 21e45bd8aeaf948aa8a5d325cfd31314, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &992599656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7152,7 +7284,7 @@ PrefabInstance:
       objectReference: {fileID: 1148632683}
     - target: {fileID: 5693025915066995186, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3943
+      value: 3946
       objectReference: {fileID: 0}
     - target: {fileID: 5693025915066995198, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_Mesh
@@ -7176,8 +7308,12 @@ PrefabInstance:
       objectReference: {fileID: 1474679355}
     - target: {fileID: 7483119678846765660, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3937
+      value: 3940
       objectReference: {fileID: 0}
+    - target: {fileID: 8086973529640831829, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 8092529287866361081, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_Name
       value: Shells Pickups (1)
@@ -7200,7 +7336,7 @@ PrefabInstance:
       objectReference: {fileID: 156289024}
     - target: {fileID: 9120431451845214810, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3937
+      value: 3940
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
@@ -8976,6 +9112,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1138523685}
+    - target: {fileID: 4430103015035863613, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
+      propertyPath: m_VersionIndex
+      value: 8993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870877608601462333, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 4894311592090044817, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Name
       value: Bullets Pickups
@@ -8988,6 +9132,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 183404745}
+    - target: {fileID: 6101055374409860523, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
+      propertyPath: m_VersionIndex
+      value: 8996
+      objectReference: {fileID: 0}
     - target: {fileID: 6105686002513818901, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -9002,7 +9150,7 @@ PrefabInstance:
       objectReference: {fileID: 1895974685}
     - target: {fileID: 7298734430440033064, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 8999
+      value: 9002
       objectReference: {fileID: 0}
     - target: {fileID: 7912435754568268794, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Mesh
@@ -9067,7 +9215,7 @@ PrefabInstance:
       objectReference: {fileID: 1731694774}
     - target: {fileID: 5693025915066995186, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3940
+      value: 3943
       objectReference: {fileID: 0}
     - target: {fileID: 5693025915066995198, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_Mesh
@@ -9091,8 +9239,12 @@ PrefabInstance:
       objectReference: {fileID: 1296164588}
     - target: {fileID: 7483119678846765660, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3934
+      value: 3937
       objectReference: {fileID: 0}
+    - target: {fileID: 8086973529640831829, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 8092529287866361081, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_Name
       value: Shells Pickups
@@ -9115,7 +9267,7 @@ PrefabInstance:
       objectReference: {fileID: 498251381}
     - target: {fileID: 9120431451845214810, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3934
+      value: 3937
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
@@ -9169,7 +9321,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 81
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9629,7 +9781,7 @@ PrefabInstance:
       objectReference: {fileID: 1915339131}
     - target: {fileID: 174053562753733059, guid: f012fb98df20d4cb09b71524e622f370, type: 3}
       propertyPath: m_VersionIndex
-      value: 7863
+      value: 7866
       objectReference: {fileID: 0}
     - target: {fileID: 174053562753733119, guid: f012fb98df20d4cb09b71524e622f370, type: 3}
       propertyPath: m_Mesh
@@ -9643,6 +9795,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4352972658384048085, guid: f012fb98df20d4cb09b71524e622f370, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 7876073402334659571, guid: f012fb98df20d4cb09b71524e622f370, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10814,8 +10970,12 @@ PrefabInstance:
       objectReference: {fileID: 1477265346}
     - target: {fileID: 4430103015035863613, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 8993
+      value: 8996
       objectReference: {fileID: 0}
+    - target: {fileID: 4870877608601462333, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 4894311592090044817, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Name
       value: Bullets Pickups (1)
@@ -10830,7 +10990,7 @@ PrefabInstance:
       objectReference: {fileID: 1790352316}
     - target: {fileID: 6101055374409860523, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 8996
+      value: 8999
       objectReference: {fileID: 0}
     - target: {fileID: 6105686002513818901, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Mesh
@@ -10846,7 +11006,7 @@ PrefabInstance:
       objectReference: {fileID: 438383674}
     - target: {fileID: 7298734430440033064, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 9002
+      value: 9005
       objectReference: {fileID: 0}
     - target: {fileID: 7912435754568268794, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Mesh
@@ -10916,7 +11076,7 @@ PrefabInstance:
       objectReference: {fileID: 1866227932}
     - target: {fileID: 5693025915066995186, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3946
+      value: 3949
       objectReference: {fileID: 0}
     - target: {fileID: 5693025915066995198, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_Mesh
@@ -10940,8 +11100,12 @@ PrefabInstance:
       objectReference: {fileID: 593071902}
     - target: {fileID: 7483119678846765660, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3940
+      value: 3943
       objectReference: {fileID: 0}
+    - target: {fileID: 8086973529640831829, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 8092529287866361081, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_Name
       value: Shells Pickups (3)
@@ -10964,7 +11128,7 @@ PrefabInstance:
       objectReference: {fileID: 295484618}
     - target: {fileID: 9120431451845214810, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
       propertyPath: m_VersionIndex
-      value: 3940
+      value: 3943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed263540d9b5c45609843f875d77d4cd, type: 3}
@@ -11675,6 +11839,7 @@ Transform:
   - {fileID: 1262131502}
   - {fileID: 236266897}
   - {fileID: 47560305}
+  - {fileID: 965105913}
   m_Father: {fileID: 184589643}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11935,8 +12100,12 @@ PrefabInstance:
       objectReference: {fileID: 1868699277}
     - target: {fileID: 4430103015035863613, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 8999
+      value: 9002
       objectReference: {fileID: 0}
+    - target: {fileID: 4870877608601462333, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 4894311592090044817, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Name
       value: Bullets Pickups (3)
@@ -11951,7 +12120,7 @@ PrefabInstance:
       objectReference: {fileID: 1776133962}
     - target: {fileID: 6101055374409860523, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 9002
+      value: 9005
       objectReference: {fileID: 0}
     - target: {fileID: 6105686002513818901, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Mesh
@@ -11967,7 +12136,7 @@ PrefabInstance:
       objectReference: {fileID: 1519448811}
     - target: {fileID: 7298734430440033064, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 9008
+      value: 9011
       objectReference: {fileID: 0}
     - target: {fileID: 7912435754568268794, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Mesh
@@ -15998,8 +16167,12 @@ PrefabInstance:
       objectReference: {fileID: 329101557}
     - target: {fileID: 4430103015035863613, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 8996
+      value: 8999
       objectReference: {fileID: 0}
+    - target: {fileID: 4870877608601462333, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 4894311592090044817, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Name
       value: Bullets Pickups (2)
@@ -16014,7 +16187,7 @@ PrefabInstance:
       objectReference: {fileID: 394179239}
     - target: {fileID: 6101055374409860523, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 8999
+      value: 9002
       objectReference: {fileID: 0}
     - target: {fileID: 6105686002513818901, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Mesh
@@ -16030,7 +16203,7 @@ PrefabInstance:
       objectReference: {fileID: 1243874978}
     - target: {fileID: 7298734430440033064, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_VersionIndex
-      value: 9005
+      value: 9008
       objectReference: {fileID: 0}
     - target: {fileID: 7912435754568268794, guid: 95e6d7945b6f74efbb7bc531bb49f2c8, type: 3}
       propertyPath: m_Mesh
@@ -16060,7 +16233,7 @@ PrefabInstance:
       objectReference: {fileID: 1871609149}
     - target: {fileID: 174053562753733059, guid: f012fb98df20d4cb09b71524e622f370, type: 3}
       propertyPath: m_VersionIndex
-      value: 7866
+      value: 7869
       objectReference: {fileID: 0}
     - target: {fileID: 174053562753733119, guid: f012fb98df20d4cb09b71524e622f370, type: 3}
       propertyPath: m_Mesh
@@ -16074,6 +16247,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4352972658384048085, guid: f012fb98df20d4cb09b71524e622f370, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 965105914}
     - target: {fileID: 7876073402334659571, guid: f012fb98df20d4cb09b71524e622f370, type: 3}
       propertyPath: m_RootOrder
       value: 8
