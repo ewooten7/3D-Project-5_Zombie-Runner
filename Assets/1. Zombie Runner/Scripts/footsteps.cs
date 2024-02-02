@@ -5,7 +5,7 @@ using UnityEngine;
 public class footsteps : MonoBehaviour
 
 {
-    public AudioSource footstepsSound, sprintSound;
+    public AudioSource walkingSound, sprintSound;
 
     void Update()
     {
@@ -14,14 +14,14 @@ public class footsteps : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
 
             {
-                footstepsSound.enabled = false;
+                walkingSound.enabled = false;
                 sprintSound.enabled = true;
             }
 
             else
 
             {
-                footstepsSound.enabled = true;
+                walkingSound.enabled = true;
                 sprintSound.enabled = false;
             }
 
@@ -30,7 +30,7 @@ public class footsteps : MonoBehaviour
         else
 
         {
-            footstepsSound.enabled = false;
+            walkingSound.enabled = false;
             sprintSound.enabled = false;
         }
     }
