@@ -28,18 +28,10 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         DisplayAmmo(); // Update and display the remaining ammo count
-        if (Input.GetMouseButtonDown(0) && canShoot == true)
+        if (Input.GetMouseButtonDown(0) && canShoot == true && ammoSlot.GetCurrentAmmo(ammoType) > 0) // Updated condition to check if the player can shoot AND if there's ammo available
         {
-            if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
-            {
-                PlayShootingSound(); // Play the shooting sound effect if there is enough ammo
-                StartCoroutine(Shoot()); // Start shooting when left mouse button is pressed
-            }
-            else
-            {
-                // Handle case when weapon is out of ammo (optional)
-                // You may want to play a click sound or display a message indicating out of ammo
-            }
+            PlayShootingSound(); // Play the shooting sound effect
+            StartCoroutine(Shoot()); // Start shooting when left mouse button is pressed and there is ammo
         }
     }
 
@@ -52,9 +44,13 @@ public class Weapon : MonoBehaviour
     IEnumerator Shoot()
     {
         canShoot = false; // Disable shooting temporarily
-        PlayMuzzleFlash(); // Play the muzzle flash effect
-        ProcessRaycast();  // Handle shooting and hit detection
-        ammoSlot.ReduceCurrentAmmo(ammoType); // Decrease ammo count
+        if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
+        {
+            PlayMuzzleFlash(); // Play the muzzle flash effect
+            PlayShootingSound(); // Play the shooting sound effect
+            ProcessRaycast();  // Handle shooting and hit detection
+            ammoSlot.ReduceCurrentAmmo(ammoType); // Decrease ammo count
+        }
         yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true; // Enable shooting after cooldown
     }
